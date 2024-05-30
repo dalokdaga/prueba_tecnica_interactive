@@ -6,3 +6,4 @@ celerybeat-schedule
 docker/local
 flake8_autofix.py
 venv/
+.vercel
