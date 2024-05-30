@@ -44,64 +44,64 @@ La aplicación FastAPI estará disponible en http://localhost:8000. Puedes acced
 - DELETE /solicitud/{id}: Elimina solicitud de ingreso.
 
 ### Ejemplo de uso, consultas endpoints Fastapi
-Envía solicitud de ingreso
-    ```bash
-        curl -X 'POST' \
-        'http://localhost:8000/api/v1/solicitud' \
-        -H 'accept: application/json' \
-        -H 'Content-Type: application/json' \
-        -d '{
-        "nombre": "Daniel",
-        "apellido": "Garcia",
-        "identificacion": "DaNGar",
-        "edad": 31,
-        "afinidad_magica": "Agua"
-        }'
-    ```
+Envía solicitud de ingreso:
+```bash
+    curl -X 'POST' \
+    'http://localhost:8000/api/v1/solicitud' \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "nombre": "Daniel",
+    "apellido": "Garcia",
+    "identificacion": "DaNGar",
+    "edad": 31,
+    "afinidad_magica": "Agua"
+    }'
+```
 
-Actualiza solicitud de ingreso
-    ```bash
-        curl -X 'PUT' \
-        'http://localhost:8000/api/v1/solicitud/1' \
-        -H 'accept: application/json' \
-        -H 'Content-Type: application/json' \
-        -d '{
-        "nombre": "Daniel",
-        "apellido": "Uscanga",
-        "identificacion": "DaNGar",
-        "edad": 31,
-        "afinidad_magica": "Agua"
-        }'
-    ```
+Actualiza solicitud de ingreso:
+```bash
+curl -X 'PUT' \
+'http://localhost:8000/api/v1/solicitud/1' \
+-H 'accept: application/json' \
+-H 'Content-Type: application/json' \
+-d '{
+"nombre": "Daniel",
+"apellido": "Uscanga",
+"identificacion": "DaNGar",
+"edad": 31,
+"afinidad_magica": "Agua"
+}'
+```
 
-Actualiza estatus de solicitud.
-    ```bash
-        curl -X 'PATCH' \
-        'http://localhost:8000/api/v1/solicitud/1/estatus' \
-        -H 'accept: application/json' \
-        -H 'Content-Type: application/json' \
-        -d '{
-        "estatus": "aceptado"
-        }'
-    ```
+Actualiza estatus de solicitud:
+```bash
+curl -X 'PATCH' \
+'http://localhost:8000/api/v1/solicitud/1/estatus' \
+-H 'accept: application/json' \
+-H 'Content-Type: application/json' \
+-d '{
+"estatus": "aceptado"
+}'
+```
 
-Consulta todas las solicitudes.
-    ```bash
-        curl -X 'GET' \
-        'http://localhost:8000/api/v1/solicitudes?skip=0&limit=10' \
-        -H 'accept: application/json'
-    ```
+Consulta todas las solicitudes:
+```bash
+curl -X 'GET' \
+'http://localhost:8000/api/v1/solicitudes?skip=0&limit=10' \
+-H 'accept: application/json'
+```
 
-Consulta asignaciones de Grimorios.
-    ```bash
-        curl -X 'GET' \
-        'http://localhost:8000/api/v1/asignaciones' \
-        -H 'accept: application/json'
-    ```
+Consulta asignaciones de Grimorios:
+```bash
+curl -X 'GET' \
+'http://localhost:8000/api/v1/asignaciones' \
+-H 'accept: application/json'
+```
 
-Elimina solicitud de ingreso.
-    ```bash
-        curl -X 'DELETE' \
-        'http://localhost:8000/api/v1/solicitud/1' \
-        -H 'accept: application/json'
-    ```
+Elimina solicitud de ingreso:
+```bash
+curl -X 'DELETE' \
+'http://localhost:8000/api/v1/solicitud/1' \
+-H 'accept: application/json'
+```
