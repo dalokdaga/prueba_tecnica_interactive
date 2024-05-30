@@ -2,9 +2,9 @@ from enum import Enum
 
 
 class StatusType(str, Enum):
-    received = 'recibido'
-    rejected = 'rechazado'
-    accepted = 'aceptado'
+    recibido = 'recibido'
+    rechazado = 'rechazado'
+    aceptado = 'aceptado'
 
 
 class AfinidadMagica(str, Enum):

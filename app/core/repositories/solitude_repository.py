@@ -40,8 +40,8 @@ class SolicitudRepository:
                 models.Solicitud.id == id).first()
             if db_solicitud is None:
                 return None
-            db_solicitud.estatus = estatus.estatus
-            if estatus.estatus.lower() == StatusType.accepted.value:
+            db_solicitud.estatus = estatus.estatus.lower()
+            if estatus.estatus.lower() == StatusType.aceptado:
                 db_solicitud.grimorio_asignado = self.asignar_grimorio()
             self.db.commit()
             self.db.refresh(db_solicitud)
