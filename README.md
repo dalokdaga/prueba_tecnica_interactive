@@ -33,7 +33,7 @@ Ejecuta los contenedores utilizando Docker Compose:
     docker-compose up
     ```
 ### 4. Ejecutar la Aplicación
-La aplicación FastAPI estará disponible en http://localhost:8000. Puedes acceder a la documentación interactiva en http://localhost:8000/docs.
+La aplicación FastAPI estará disponible en http://localhost:8000 Puedes acceder a la documentación interactiva en http://localhost:8000/docs
 
 ### Endpoints
 - POST /solicitud: Envía solicitud de ingreso.
@@ -42,6 +42,12 @@ La aplicación FastAPI estará disponible en http://localhost:8000. Puedes acced
 - GET /solicitudes: Consulta todas las solicitudes.
 - GET /asignaciones: Consulta asignaciones de Grimorios.
 - DELETE /solicitud/{id}: Elimina solicitud de ingreso.
+
+### Ejecutar test unitarios
+Envía solicitud de ingreso:
+```bash
+python -m unittest tests/test.py
+```
 
 ### Ejemplo de uso, consultas endpoints Fastapi
 Envía solicitud de ingreso:
