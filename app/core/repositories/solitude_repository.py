@@ -77,8 +77,8 @@ class SolicitudRepository:
 
     def asignar_grimorio(self):
         grimorios = ["Trébol de 1 hoja", "Trébol de 2 hojas",
-                        "Trébol de 3 hojas", "Trébol de 4 hojas",
-                        "Trébol de 5 hojas"]
+                     "Trébol de 3 hojas", "Trébol de 4 hojas",
+                     "Trébol de 5 hojas"]
         probabilidades = [0.4, 0.3, 0.2, 0.09, 0.01]
         return choices(grimorios, probabilidades)[0]
        
