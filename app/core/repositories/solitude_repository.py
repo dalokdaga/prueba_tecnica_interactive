@@ -2,6 +2,7 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from app.core import models, schemas
 from app.core.enums.status import StatusType
+from random import choices
 
 
 class SolicitudRepository:
@@ -75,7 +76,6 @@ class SolicitudRepository:
             raise HTTPException(status_code=404, detail=f"db error {str(e)}")
 
     def asignar_grimorio(self):
-        from random import choices
         grimorios = ["Trébol de 1 hoja", "Trébol de 2 hojas",
                         "Trébol de 3 hojas", "Trébol de 4 hojas",
                         "Trébol de 5 hojas"]

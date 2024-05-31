@@ -10,6 +10,9 @@ Este proyecto es una API construida con FastAPI que gestiona solicitudes de ingr
 - Consultar Asignaciones: Permite consultar las asignaciones de grimorios realizadas.
 - Eliminar Solicitud: Permite eliminar una solicitud de ingreso.
 
+## Video de explicación 
+[![Alt text](https://img.youtube.com/vi/pHsfQL-b7Ms/0.jpg)](https://www.youtube.com/watch?v=pHsfQL-b7Ms)
+
 ## Requisitos
 
 - [Docker](https://www.docker.com/)
@@ -22,8 +25,12 @@ Este proyecto es una API construida con FastAPI que gestiona solicitudes de ingr
 Clona este repositorio en tu máquina local:
 
 ```bash
-git https://github.com/dalokdaga/prueba_tecnica_interactive
+git clone https://github.com/dalokdaga/prueba_tecnica_interactive
 cd prueba_tecnica_interactive
+```
+### 1.2 Ejecución en local
+```bash
+uvicorn main:app
 ```
 
 ### 2. Construir la Imagen Docker
