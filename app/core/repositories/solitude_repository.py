@@ -41,7 +41,7 @@ class SolicitudRepository:
             if db_solicitud is None:
                 return None
             db_solicitud.estatus = estatus.estatus.lower()
-            if estatus.estatus.lower() == StatusType.aceptado:
+            if estatus.estatus.lower() == StatusType.aprobado:
                 db_solicitud.grimorio_asignado = self.asignar_grimorio()
             self.db.commit()
             self.db.refresh(db_solicitud)
@@ -75,12 +75,10 @@ class SolicitudRepository:
             raise HTTPException(status_code=404, detail=f"db error {str(e)}")
 
     def asignar_grimorio(self):
-        try:
-            from random import choices
-            grimorios = ["Trébol de 1 hoja", "Trébol de 2 hojas",
-                         "Trébol de 3 hojas", "Trébol de 4 hojas",
-                         "Trébol de 5 hojas"]
-            probabilidades = [0.4, 0.3, 0.2, 0.09, 0.01]
-            return choices(grimorios, probabilidades)[0]
-        except Exception as e:
-            raise HTTPException(status_code=404, detail=f"db error {str(e)}")        
+        from random import choices
+        grimorios = ["Trébol de 1 hoja", "Trébol de 2 hojas",
+                        "Trébol de 3 hojas", "Trébol de 4 hojas",
+                        "Trébol de 5 hojas"]
+        probabilidades = [0.4, 0.3, 0.2, 0.09, 0.01]
+        return choices(grimorios, probabilidades)[0]
+       

@@ -39,10 +39,10 @@ class CaseTest(BaseTest):
             print("--- Busqueda solicitud por id ok")
 
     def test_case_3_solicitud_status(self):
-        status = SolicitudEstatusUpdate(estatus="aceptado")             
+        status = SolicitudEstatusUpdate(estatus="aprobado")             
         result = Handler.update_application_status_handler(CaseTest.id, status, self.db)
         if result:
-            self.assertEqual("aceptado", status.estatus)
+            self.assertEqual("aprobado", status.estatus)
             print("--- Actualizacion de estatus ok")
 
     def test_case_4_solicitudes(self):        

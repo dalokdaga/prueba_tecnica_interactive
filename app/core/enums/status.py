@@ -4,7 +4,7 @@ from enum import Enum
 class StatusType(str, Enum):
     recibido = 'recibido'
     rechazado = 'rechazado'
-    aceptado = 'aceptado'
+    aprobado = 'aprobado'
 
 
 class AfinidadMagica(str, Enum):

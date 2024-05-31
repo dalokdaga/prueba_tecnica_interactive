@@ -1,7 +1,14 @@
 # Proyecto FastAPI con Docker
 
-Este es un proyecto básico de FastAPI configurado para ejecutarse dentro de un contenedor Docker. La base de datos utilizada es SQLite3.
+Este proyecto es una API construida con FastAPI que gestiona solicitudes de ingreso a una academia de magia en el Reino del Trébol y asigna grimorios (libros mágicos) a los estudiantes. La aplicación incluye varias funcionalidades como el envío, actualización, consulta y eliminación de solicitudes, así como la asignación aleatoria de grimorios basada en probabilidades específicas.
 
+## Funcionalidades
+- Crear Solicitud: Permite a los estudiantes enviar una solicitud de ingreso a la academia de magia.
+- Actualizar Solicitud: Permite actualizar la información de una solicitud existente.
+- Actualizar Estatus de Solicitud: Permite cambiar el estatus de una solicitud (recibido, rechazado, aprobado).
+- Consultar Solicitudes: Permite consultar todas las solicitudes enviadas.
+- Consultar Asignaciones: Permite consultar las asignaciones de grimorios realizadas.
+- Eliminar Solicitud: Permite eliminar una solicitud de ingreso.
 
 ## Requisitos
 
@@ -44,7 +51,6 @@ La aplicación FastAPI estará disponible en http://localhost:8000 Puedes accede
 - DELETE /solicitud/{id}: Elimina solicitud de ingreso.
 
 ### Ejecutar test unitarios
-Envía solicitud de ingreso:
 ```bash
 python -m unittest tests/test.py
 ```
@@ -87,7 +93,7 @@ curl -X 'PATCH' \
 -H 'accept: application/json' \
 -H 'Content-Type: application/json' \
 -d '{
-"estatus": "aceptado"
+"estatus": "aprobado"
 }'
 ```
 
