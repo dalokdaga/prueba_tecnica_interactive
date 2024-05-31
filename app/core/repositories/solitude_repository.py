@@ -17,7 +17,7 @@ class SolicitudRepository:
             self.db.refresh(db_solicitud)
             return db_solicitud
         except Exception as e:
-            raise HTTPException(status_code=400, detail= f"db error {str(e)}")
+            raise HTTPException(status_code=400, detail=f"db error {str(e)}")
 
     def update_solicitud(self, id: int, solicitud: schemas.SolicitudUpdate):
         try:
@@ -31,7 +31,7 @@ class SolicitudRepository:
             self.db.refresh(db_solicitud)
             return db_solicitud
         except Exception as e:
-            raise HTTPException(status_code=404, detail= f"db error {str(e)}")    
+            raise HTTPException(status_code=404, detail=f"db error {str(e)}")    
 
     def update_solicitud_estatus(self, id: int,
                                  estatus: schemas.SolicitudEstatusUpdate):
@@ -47,21 +47,21 @@ class SolicitudRepository:
             self.db.refresh(db_solicitud)
             return db_solicitud
         except Exception as e:
-            raise HTTPException(status_code=404, detail= f"db error {str(e)}")
-        
+            raise HTTPException(status_code=404, detail=f"db error {str(e)}")
+
     def get_solicitudes(self, skip: int = 0, limit: int = 10):
         try:
             return self.db.query(models.Solicitud).offset(skip).limit(limit).all()
         except Exception as e:
-            raise HTTPException(status_code=404, detail= f"db error {str(e)}")        
+            raise HTTPException(status_code=404, detail=f"db error {str(e)}")        
 
     def get_asignaciones(self):
         try:
             return self.db.query(models.Solicitud).filter(
                 models.Solicitud.grimorio_asignado is not None).all()
         except Exception as e:
-            raise HTTPException(status_code=404, detail= f"db error {str(e)}")
-    
+            raise HTTPException(status_code=404, detail=f"db error {str(e)}")
+
     def delete_solicitud(self, id: int):
         try:
             db_solicitud = self.db.query(models.Solicitud).filter(
@@ -72,15 +72,15 @@ class SolicitudRepository:
             self.db.commit()
             return db_solicitud
         except Exception as e:
-            raise HTTPException(status_code=404, detail= f"db error {str(e)}")
-        
+            raise HTTPException(status_code=404, detail=f"db error {str(e)}")
+
     def asignar_grimorio(self):
         try:
             from random import choices
             grimorios = ["Trébol de 1 hoja", "Trébol de 2 hojas",
-                        "Trébol de 3 hojas", "Trébol de 4 hojas",
-                        "Trébol de 5 hojas"]
+                         "Trébol de 3 hojas", "Trébol de 4 hojas",
+                         "Trébol de 5 hojas"]
             probabilidades = [0.4, 0.3, 0.2, 0.09, 0.01]
             return choices(grimorios, probabilidades)[0]
         except Exception as e:
-            raise HTTPException(status_code=404, detail= f"db error {str(e)}")        
+            raise HTTPException(status_code=404, detail=f"db error {str(e)}")        

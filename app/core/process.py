@@ -1,7 +1,5 @@
 from fastapi import HTTPException
 from app.core.repositories.solitude_repository import SolicitudRepository
-from app.core.utilities import is_valid_enum
-from app.core.enums.status import StatusType
 
 
 class Process:

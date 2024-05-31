@@ -1,4 +1,3 @@
-from enum import Enum
 from sqlalchemy import Column, Integer, String, Enum as SQLAEnum
 from sqlalchemy.ext.declarative import declarative_base
 from app.core.enums.status import StatusType
